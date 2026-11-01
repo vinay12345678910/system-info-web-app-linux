@@ -1,0 +1,68 @@
+/* ===== Linux System Dashboard - Stylesheet ===== */
+
+/* Page background and text */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Each stat card */
+.card {
+    background-color: #313244;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.card .details {
+    font-size: 0.85rem;
+    color: #a6adc8;
+    margin-bottom: 8px;
+}
+
+/* Progress bar track */
+.bar-track {
+    background-color: #45475a;
+    border-radius: 8px;
+    height: 24px;
+    overflow: hidden;
+}
+
+/* Progress bar fill */
+.bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #1e1e2e;
+    transition: width 0.3s ease;
+}
+
+/* Color coding: green < 60%, yellow 60-85%, red > 85% */
+.bar-fill.low    { background-color: #a6e3a1; }
+.bar-fill.medium { background-color: #f9e2af; }
+.bar-fill.high   { background-color: #f38ba8; }
+
+.footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #585b70;
+    margin-top: 30px;
+}

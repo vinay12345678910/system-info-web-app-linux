@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux System Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🖥️ Linux System Dashboard</h1>
+
+    <!-- CPU Card -->
+    <div class="card">
+        <h2>CPU Usage</h2>
+        <div class="details">Processor load</div>
+        <div class="bar-track">
+            <div class="bar-fill {{ 'low' if cpu < 60 else ('medium' if cpu < 85 else 'high') }}"
+                 style="width: {{ cpu }}%;">
+                {{ cpu }}%
+            </div>
+        </div>
+    </div>
+
+    <!-- RAM Card -->
+    <div class="card">
+        <h2>RAM Usage</h2>
+        <div class="details">{{ ram_used_gb }} GB used out of {{ ram_total_gb }} GB</div>
+        <div class="bar-track">
+            <div class="bar-fill {{ 'low' if ram < 60 else ('medium' if ram < 85 else 'high') }}"
+                 style="width: {{ ram }}%;">
+                {{ ram }}%
+            </div>
+        </div>
+    </div>
+
+    <!-- Disk Card -->
+    <div class="card">
+        <h2>Disk Usage</h2>
+        <div class="details">{{ disk_used_gb }} GB used out of {{ disk_total_gb }} GB</div>
+        <div class="bar-track">
+            <div class="bar-fill {{ 'low' if disk < 60 else ('medium' if disk < 85 else 'high') }}"
+                 style="width: {{ disk }}%;">
+                {{ disk }}%
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">Refresh the page to update stats</div>
+
+</body>
+</html>
